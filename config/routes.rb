@@ -1,4 +1,7 @@
 FlashcardApp::Application.routes.draw do
+  
+  resources :flashcards
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
