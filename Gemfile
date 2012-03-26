@@ -11,6 +11,7 @@ end
 
 gem 'jquery-rails'
 
+# Gem groups
 group :development do
   gem 'heroku'
 end
