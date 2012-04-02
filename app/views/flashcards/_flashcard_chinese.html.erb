@@ -1,0 +1,17 @@
+<%= content_tag(:div, :data => {:role => "page"}, :id => "#{current_card.id}_chinese") do %>
+	<div data-role="content">
+		<div class="card_contents">
+			<div class="card_text">
+				<h1><%= current_card.character %></h1>
+				<h2><%= current_card.pinyin %></h2>
+			</div>
+			<div class="card_buttons">
+				<p><%= link_to("Flip", "##{current_card.id}_english", :data => {:role => "button", :transition => "flip"})%></p>
+				<p><%= link_to("Next", "##{next_card.id}_chinese", :data => {:role => "button", :transition => "slide"})%></p>
+			</div>
+		</div>
+	</div>
+	<div data-role="footer">
+		<%= link_to "Back", root_path %>
+	</div>
+<% end %>

@@ -1,0 +1,25 @@
+<div data-role="page">
+	
+	<div data-role="header">
+		<h1>Awesome Flashcard App</h1>
+	</div>
+	
+	<div data-role="content">
+		<div data-role="notification"><%= flash[:notice] if flash[:notice] %></div>
+		<ul data-role="listview" class="ui-listview">
+			<li class="ui-btn">
+				<%= link_to "View all flashcards", flashcards_path, :data => {:ajax => "false"} %>
+			</li>
+			<li class="ui-btn">
+					<%= link_to "Create a new flashcard", new_flashcard_path, :data => {:ajax => "false"} %>
+			</li>
+			<li class="ui-btn">
+					<%= link_to "Import flashcards", build_deck_flashcards_path, :data => {:ajax => "false"} %>
+			</li>
+		</ul>
+	</div>
+	
+	<div data-role="footer">
+	</div>
+	
+</div>

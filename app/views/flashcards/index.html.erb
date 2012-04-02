@@ -1,32 +1,18 @@
-<% @flashcard.each_with_index do |current_card, index| %>
-	<% @flashcard[index + 1].nil? ? next_card = @flashcard[0] : next_card = @flashcard[index + 1] %>
-	
-	<%= content_tag(:div, :data => {:role => "page"}, :id => "#{current_card.id}_chinese") do %>
-		<div data-role="content">
-			<div class="card_contents">
-				<div class="card_text">
-					<h1><%= current_card.character %></h1>
-					<h2><%= current_card.pinyin %></h2>
-				</div>
-				<div class="card_buttons">
-					<p><%= link_to("Flip", "##{current_card.id}_english", :data => {:role => "button", :transition => "flip"})%></p>
-					<p><%= link_to("Next", "##{next_card.id}_chinese", :data => {:role => "button", :transition => "slide"})%></p>
-				</div>
-			</div>
-		</div>
+<% if !@flashcards.empty? %>
+	<% @flashcards.each_with_index do |current_card, index| %>
+		<% @flashcards[index + 1].nil? ? next_card = @flashcards[0] : next_card = @flashcards[index + 1] %>
+		<%= render :partial => "flashcard_chinese", :locals => {:current_card => current_card, :next_card => next_card} %>
+		<%= render :partial => "flashcard_english", :locals => {:current_card => current_card, :next_card => next_card} %>
 	<% end %>
-	
-	<%= content_tag(:div, :data => {:role => "page"}, :id => "#{current_card.id}_english") do %>
+<% else %>
+	<div data-role="page">
 		<div data-role="content">
-			<div class="card_contents">
-				<div class="card_text">
-					<h3><%= current_card.english %></h3>
-				</div>
-				<div class="card_buttons">
-					<%= link_to("Flip", "##{current_card.id}_chinese", :data => {:role => "button", :transition => "flip"})%>
-					<%= link_to("Next", "##{next_card.id}_chinese", :data => {:role => "button", :transition => "slide"})%>
-				</div>
-			</div>
+			<p>You don't have any cards yet!</p>
 		</div>
-	<% end %>
+		<div data-role="footer">
+			<%= link_to "Back", root_path %>
+		</div>
+	</div>
 <% end %>
+
+
