@@ -1,8 +1,9 @@
 class XMLCardParser
   require 'ostruct'
-  
-  def self.retrieve_card_data
-    file = File.open('public/chinesepod_vocab_201200327.xml')
+  require 'open-uri'
+
+  def self.retrieve_card_data(xml_file)
+    file = open(xml_file)
     doc = Nokogiri::XML(file)
 
     all_xml_cards = doc.css("word")

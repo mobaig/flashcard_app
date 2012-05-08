@@ -1,0 +1,19 @@
+<div data-role="page">
+
+  <div data-role="header">
+    <div><h1>Provide a URL</h1></div>
+  </div>
+
+  <div data-role="content">
+    <%= form_for :xml_location, :url => deck_path, :html => {:method => :put} do |f| %>
+      <%= f.label :url, "Paste here:" %>
+      <%= f.text_field :url %>
+      <%= f.submit "Build!" %>
+    <% end %>
+  </div>
+
+  <div data-role="footer">
+    <%= link_to "Back", root_path, :data => {:ajax => "false"} %>
+  </div>
+
+</div>

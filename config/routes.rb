@@ -1,12 +1,9 @@
 FlashcardApp::Application.routes.draw do
-  
+
   root :to => 'menus#index'
-  resources :flashcards do |variable|
-    collection do
-      get 'build_deck'
-    end
-  end
-  
+  resources :flashcards
+  resource :deck
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,12 +1,12 @@
 <div data-role="page">
 	<div data-role="header">
-		<h1>Mo's Flashcards</h1>
+		<div><h1>Create a flashcard</h1></div>
 	</div>
 	<div data-role="content">
 		<%= form_for @flashcard do |f| %>
 			<%= f.label :english %>
 			<%= f.text_field :english %>
-			<%= f.label :pinyin %>			
+			<%= f.label :pinyin %>
 			<%= f.text_field :pinyin %>
 			<%= f.label :character %>
 			<%= f.text_field :character %>
@@ -19,4 +19,3 @@
 		<%= link_to "Back", root_path, :data => {:ajax => "false"} %>
 	</div>
 </div>
-
