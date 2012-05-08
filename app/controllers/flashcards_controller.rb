@@ -10,16 +10,7 @@ class FlashcardsController < ApplicationController
   def create
     @flashcard = Flashcard.new(params[:flashcard])
     @flashcard.save
+    flash[:notice] = "Card created"
     redirect_to new_flashcard_path
-  end
-  
-  def build_deck
-    deck_construction = Flashcard.build_deck
-    if deck_construction
-      flash.now[:notice] = "Deck built!"
-    else
-      flash.now[:error] = "Something went wrong. Deck not generated correctly."
-    end
-    render 'build_deck'
   end
 end

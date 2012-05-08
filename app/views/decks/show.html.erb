@@ -1,0 +1,17 @@
+<div data-role="page">
+
+  <div data-role="header">
+    <h1>Build a deck</h1>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      <li><%= link_to "Provide a URL", edit_deck_path, :data => {:ajax => "false"} %></li>
+    </ul>
+  </div>
+
+  <div data-role="footer">
+    <%= link_to "Back", root_path, :data => {:ajax => "false"} %>
+  </div>
+
+</div>
