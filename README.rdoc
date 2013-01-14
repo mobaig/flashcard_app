@@ -1,4 +1,4 @@
-# Flashcard App
+== Flashcard App
 
 - A mobile app written in JQuery Mobile and Rails for the purpose of building Mandarin vocabulary.
 - Creates a deck of flashcards based on an XML export from ChinesePod.
